@@ -1,0 +1,1 @@
+$(document).ready(function(){debugLog("success","Global script is loaded now")});

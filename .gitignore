@@ -1,0 +1,6 @@
+# system specific
+.DS_Store
+
+# project specfic
+/node_modules
+/task-files
