@@ -3,6 +3,7 @@ const path = require('path');
 const CleanCSS = require('clean-css');
 const Terser = require('terser');
 const config = require('./config');
+const glob = require('glob');
 
 const cleanCSS = new CleanCSS();
 
@@ -37,12 +38,35 @@ async function build() {
   copyAssets('src/assets', 'build/assets');
   console.log('📂 Папка assets скопирована в build/assets');
 
-  if (config.libraries && config.libraries.length) {
-    fs.ensureDirSync('build/assets/vendors');
-    config.libraries.forEach(src => {
-      fs.copySync(src, `build/assets/vendors/${path.basename(src)}`);
-    });
+
+  // новая систем интеграции библиотек в конечный билд
+  if (config.libraries) {
+    const vendorsBase = 'build/assets/vendors';
+  
+    for (const [libName, lib] of Object.entries(config.libraries)) {
+      const libDir = path.join(vendorsBase, libName);
+      fs.ensureDirSync(libDir);
+  
+      for (const [type, entries] of Object.entries(lib)) {
+        const targetDir = path.join(libDir, type);
+        fs.ensureDirSync(targetDir);
+  
+        for (const entry of entries) {
+          if (entry.includes('*')) {
+            // glob (webfonts)
+            glob.sync(entry).forEach(file => {
+              fs.copySync(file, path.join(targetDir, path.basename(file)));
+            });
+          } else {
+            fs.copySync(entry, path.join(targetDir, path.basename(entry)));
+          }
+        }
+      }
+  
+      console.log(`📦 Vendor ${libName} встроен в ${libDir}`);
+    }
   }
+  
 
   const commonDir = 'src/common';
   const commonBuildDir = 'build/common';

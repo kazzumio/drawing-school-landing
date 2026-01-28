@@ -1,13 +1,28 @@
+// config.js
 module.exports = {
-  paths: {
-    src: 'src',
-    build: 'build/pages',
-    vendors: '../assets/vendors'
-  },
-  
-  libraries: [
-    'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
-  ]
+  libraries: {
+    jquery: {
+      js: [
+        'node_modules/jquery/dist/jquery.min.js'
+      ]
+    },
+
+    bootstrap: {
+      css: [
+        'node_modules/bootstrap/dist/css/bootstrap.min.css'
+      ],
+      js: [
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+      ]
+    },
+
+    fontawesome: {
+      css: [
+        'node_modules/@fortawesome/fontawesome-free/css/all.min.css'
+      ],
+      webfonts: [
+        'node_modules/@fortawesome/fontawesome-free/webfonts/*'
+      ]
+    }
+  }
 };
