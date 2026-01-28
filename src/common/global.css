@@ -1,7 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans';
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+
+section {
+  padding: 80px 0;
+}
+
+:root {
+  --art-orange: #E88B5D;
+  --art-peach: rgb(254, 207, 175);
+  --art-beige: #FDFBF7;
+  --art-dark-steal: #2D3748;
+  --art-marine: rgb(70, 103, 131);
 }
 
 @font-face {
@@ -9,4 +22,135 @@
   src: url('../assets/fonts/BERNIERDISTRESSED-REGULAR.OTF') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+.fa-xxl {
+  font-size: 2em;
+}
+
+.bernier-font {
+  font-family: 'Bernier Distressed';
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bordered {
+  border: 5px solid var(--art-peach);
+}
+
+.text-marine {
+  color: var(--art-marine);
+}
+
+.bold-hr {
+  width: 90%;
+  height: 4px;
+  margin: 2rem auto;
+  border: none;
+  background-color: var(--art-peach);
+}
+
+.list-with-dots li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.list-with-dots li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #f29c6b;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+}
+
+header {
+  padding: 20px 0;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, .95);
+  -webkit-box-shadow: 0 2px 20px rgba(0,0,0,0.22);
+          box-shadow: 0 2px 20px rgba(0,0,0,0.22);
+  padding: 9px 0;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  background-color: var(--art-dark-steal);
+  color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  color: var(--art-dark-steal) !important;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  color: var(--art-orange) !important;
+}
+
+.section-centred-inner {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .section-centred-inner {
+    max-width: 65%;
+  }
+}
+
+.cta-button {
+  color: #fff;
+  background: #FE8B2E;
+  background: -webkit-linear-gradient(90deg, #FE8B2E 0%, #d26b55 100%);
+  background: linear-gradient(90deg, #FE8B2E 0%, #d26b55 100%);
+  border: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.cta-button-lg {
+  padding: 25px 59px;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.cta-button-md {
+  padding: 16px 35px;
+  letter-spacing: 3px;
+  border-radius: 7px;
+}
+
+.cta-banner {
+  background: url('../../assets/images/cta-banner-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.our-audience__text-card {
+  background: url('../../assets/images/our-audience-left-side-card-bg.jpg') no-repeat center center;
+  background-size: cover;
 }

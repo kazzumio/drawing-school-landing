@@ -1,0 +1,175 @@
+.cta-banner {
+  background: url('../../assets/images/cta-banner-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.cta-banner h1 {
+  color: var(--art-orange);
+  line-height: 1;
+}
+
+.cta-banner h1 div:first-of-type {
+  font-size: 3em;
+}
+
+.cta-banner h1 div:last-of-type {
+  font-size: 2.4em;
+}
+
+.cta-banner h2 {
+  color: var(--art-marine);
+}
+
+.cta-banner__description {
+  margin-bottom: 3em;
+}
+
+.cta-banner__description li {
+  font-size: 1.4em;
+  line-height: 31px;
+  margin-bottom: 16px;
+}
+
+.cta-banner .info-card {
+  background: url(../../assets/images/course-info-card-bg.png) center / cover no-repeat;
+  font-size: 1.4em;
+}
+
+.info-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+}
+
+.info-card i {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.material-card {
+  -webkit-transition: transform 0.25s ease, -webkit-box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.material-card:hover {
+  -webkit-transform: translateY(-4px);
+      -ms-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.material-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: white;
+  overflow: hidden;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card:hover {
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.price-header {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  background: var(--art-marine);
+  font-family: 'Bernier Distressed';
+}
+
+.price-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.price-body__prices {
+  color: var(--art-marine);
+}
+
+.price-img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.price-currency {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+.currency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e88b5d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+
+.currency-rub { opacity: 1; }
+.currency-usd { opacity: 0.5; }
+
+.price-currency .currency:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.faq-item {
+  background: white;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron-up-pos-fix {
+  position: relative;
+  left: 10px;
+}
+
+.faq-answer {
+  padding: 0 20px 20px 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.pricing {
+  background: url('../../assets/images/pricing-bg.jpg') center center;
+  background-size: cover;
+}
