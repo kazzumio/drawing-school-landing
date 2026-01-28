@@ -1,0 +1,3 @@
+$(document).ready(function() {
+  debugLog('success', 'About page is successfully loaded');
+});
