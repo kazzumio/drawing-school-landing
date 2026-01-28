@@ -1,0 +1,34 @@
+{
+  "name": "drawing-school-landing",
+  "version": "0.0.1",
+  "description": "A simple and adaptive landing for drawing online school",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "serve": "live-server build --open=/pages/main/main.html",
+    "watch": "chokidar \"src/**/*\" -c \"node scripts/build.js\"",
+    "site": "npm-run-all -p watch serve"
+  },
+  "keywords": [
+    "school",
+    "adaptive",
+    "simple",
+    "landing"
+  ],
+  "author": "kazumov",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "^4.6.2",
+    "browser-sync": "^3.0.4",
+    "chokidar": "^3.6.0",
+    "chokidar-cli": "^3.0.0",
+    "clean-css": "^5.3.3",
+    "fs-extra": "^11.2.0",
+    "jquery": "^3.7.1",
+    "live-server": "^1.2.2",
+    "minify": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.97.3",
+    "terser": "^5.24.0"
+  }
+}
