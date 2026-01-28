@@ -13,7 +13,7 @@ function initSmoothScroll(speed) {
       }, speed);
     }
   });
-  debugLog('success', 'Smooth scrolling is successfully initialized');
+  debugLog('info', 'Smooth scrolling is successfully initialized');
 }
 
 
@@ -26,7 +26,27 @@ function initAccordionSwitcher() {
 
     $item.toggleClass('active');
   });
-  debugLog('success', 'Accordion switcher is successfully initialized');
+  debugLog('info', 'Accordion switcher is successfully initialized');
+}
+
+function initColorsListModal() {
+  $('.material-toggle').on('click', function(e) {
+    e.preventDefault();
+    const $card = $(this).closest('.material-card');
+    const $popup = $card.find('.material-popup');
+
+    $('.material-popup').not($popup).slideUp(200);
+
+    $popup.stop(true, true).slideToggle(200);
+  });
+
+  $(document).on('click', function(e) {
+    if (!$(e.target).closest('.material-card').length) {
+      $('.material-popup').slideUp(200);
+    }
+  });
+
+  debugLog('info', 'Colors modal is successfully initialized');
 }
 
 
@@ -66,13 +86,14 @@ function initCurrencyCalculator() {
     $clicked.removeClass('opacity-half').addClass('active-currency');
   });
 
-  debugLog('success', 'Currency calculator is successfully initialized');
+  debugLog('info', 'Currency calculator is successfully initialized');
 }
 
 
 // инициализация всех функций при готовности DOM
 $(document).ready(function () {
   initSmoothScroll(800);
+  initColorsListModal();
   initCurrencyCalculator()
   initAccordionSwitcher();
 
