@@ -1,4 +1,37 @@
-$(document).ready(function () {
+function initSmoothScroll(speed) {
+  if (typeof speed !== 'number') speed = 800;
+
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+
+    const target = $(this).attr('href');
+    const $targetEl = $(target);
+
+    if ($targetEl.length) {
+      $('html, body').animate({
+        scrollTop: $targetEl.offset().top
+      }, speed);
+    }
+  });
+  debugLog('success', 'Smooth scrolling is successfully initialized');
+}
+
+
+
+function initAccordionSwitcher() {
+  $('.faq-toggle').on('click', function () {
+    const $item = $(this).closest('.faq-item');
+
+    $('.faq-item.active').not($item).removeClass('active');
+
+    $item.toggleClass('active');
+  });
+  debugLog('success', 'Accordion switcher is successfully initialized');
+}
+
+
+
+function initCurrencyCalculator() {
   // переменные
   const EXCHANGE_RATE = 70;
 
@@ -33,16 +66,15 @@ $(document).ready(function () {
     $clicked.removeClass('opacity-half').addClass('active-currency');
   });
 
+  debugLog('success', 'Currency calculator is successfully initialized');
+}
 
-  $('.faq-toggle').on('click', function () {
-    const $item = $(this).closest('.faq-item');
 
-    $('.faq-item.active').not($item).removeClass('active');
-
-    $item.toggleClass('active');
-  });
-  debugLog('success', 'Accordion switcher is successfully loaded');
-
+// инициализация всех функций при готовности DOM
+$(document).ready(function () {
+  initSmoothScroll(800);
+  initCurrencyCalculator()
+  initAccordionSwitcher();
 
   debugLog('success', 'Main page is successfully loaded');
 });
