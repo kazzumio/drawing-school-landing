@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "description": "A simple and adaptive landing for drawing online school",
   "main": "index.js",
+  "homepage": "https://github.com/kazzumio/drawing-school-landing",
   "scripts": {
     "build": "node ./scripts/build.js",
     "serve": "live-server build --open=/pages/main/main.html",
     "watch": "chokidar \"src/**/*\" -c \"node scripts/build.js\"",
-    "site": "npm-run-all -p watch serve"
+    "site": "npm-run-all -p watch serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "school",
@@ -25,6 +28,7 @@
     "chokidar-cli": "^3.0.0",
     "clean-css": "^5.3.3",
     "fs-extra": "^11.2.0",
+    "gh-pages": "^6.3.0",
     "glob": "^13.0.0",
     "jquery": "^3.7.1",
     "live-server": "^1.2.2",
