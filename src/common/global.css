@@ -28,6 +28,12 @@ section {
   font-size: 2em;
 }
 
+.section-title {
+  font-family: 'Bernier Distressed';
+  color: var(--art-orange);
+  font-size: 5em;
+}
+
 .bernier-font {
   font-family: 'Bernier Distressed';
 }
