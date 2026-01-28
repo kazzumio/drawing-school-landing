@@ -132,10 +132,11 @@
   font-size: 18px;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .currency-rub { opacity: 1; }
-.currency-usd { opacity: 0.5; }
+.currency-usd { opacity: 1; }
 
 .price-currency .currency:hover {
   -webkit-transform: scale(1.1);
